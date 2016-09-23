@@ -1,0 +1,16 @@
+html {
+  height: 480px;
+  width: 800px;
+  background-color: #FFF;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+}
+
+#monitor-div {
+  height: 380px;
+  width: 100%;
+}

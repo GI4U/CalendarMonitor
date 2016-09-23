@@ -1,0 +1,12 @@
+#event-timer {
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.event-timer-text {
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 28px;
+  text-align: center;
+}

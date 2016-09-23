@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="de">
+
+  <head>
+
+    <title>
+      Kalender Monitor
+    </title>
+
+    <meta name="author" content="Marius Runde">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+
+    <!-- Import stylesheets -->
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/clock.css">
+    <link rel="stylesheet" type="text/css" href="css/event.css">
+    <link rel="stylesheet" type="text/css" href="css/timer.css">
+
+    <!-- Import the application's configuration -->
+    <script src="js/config.js"></script>
+    
+  </head>
+
+  <body>
+    
+    <!-- div for the Google authorization -->
+    <div id="authorize-div" style="display: none;">
+      
+      <span>
+        Authorize access to Google Calendar API
+      </span>
+      
+      <button id="authorize-button" onclick="handleAuthClick(event)">
+        Authorize
+      </button>
+
+    </div>
+
+    <div id="monitor" style="display: none;" class="container-fluid">
+      
+      <div class="row">
+
+        <h1 id="clock" class="text-center"></h1>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          
+          <h2 id="event-title" class="text-center"></h2>
+
+          <h5 id="event-location" class="text-center"></h5>
+
+          <div id="event-directions" class="text-center">
+            
+            <span id="event-directions-title"></span><span id="event-directions-duration"></span>
+
+          </div>
+
+          <div id="event-timer"></div>
+
+        </div>
+
+        <div class="col-sm-6">
+          
+          <div id="weather">
+            
+            <img src="http://www.dwd.de/DWD/wetter/radar/radfilm_nib_akt.gif" width="100%" />
+
+          </div>
+
+          <div id="traffic"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Script imports -->
+    <script src="js/app.js"></script>
+
+    <script src="js/google_apis/AuthenticationHandler.js"></script>
+    <script src="js/google_apis/CalendarHandler.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+    
+    <script src="js/google_apis/DirectionsHandler.js"></script>
+    <script src="js/google_apis/GeocodingHandler.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&signed_in=true" async defer></script>
+
+    <script src="js/TimerHandler.js"></script>
+    <script src="lib/progressbar.js/dist/progressbar.min.js"></script>
+    <script src="lib/moment/min/moment-with-locales.min.js"></script>
+
+  </body>
+
+</html>
